@@ -9,12 +9,16 @@
     body { min-height:100vh; background:linear-gradient(135deg,#1e1e2f 0%,#2a1a4a 50%,#0f0f1a 100%);
            color:#fff; display:flex; align-items:center; justify-content:center; padding:20px; }
     .container { width:100%; max-width:900px; }
-    h1 { text-align:center; margin-bottom:30px; font-size:2.4rem; font-weight:700;
+    h1 { text-align:center; margin-bottom:40px; font-size:2.4rem; font-weight:700;
          background:linear-gradient(90deg,#8b5cf6,#3b82f6); -webkit-background-clip:text;
          -webkit-text-fill-color:transparent; background-clip:text; }
     
-    /* Сетка: 2 колонки, 2 строки */
-    .modes { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    /* Сетка: 3 колонки */
+    .modes { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px;
+    }
     
     .mode-card {
       background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
@@ -27,10 +31,11 @@
       border-color:#8b5cf6; box-shadow:0 10px 30px rgba(139,92,246,0.3);
     }
     .mode-card .icon { font-size:3rem; margin-bottom:15px; display:block; }
-    .mode-card .label { font-size:1.3rem; font-weight:600; }
+    .mode-card .label { font-size:1.2rem; font-weight:600; }
     
-    @media (max-width:600px) {
-      .modes { grid-template-columns:1fr; }
+    /* На мобильных — в одну колонку */
+    @media (max-width:800px) {
+      .modes { grid-template-columns: 1fr; }
       h1 { font-size:1.8rem; }
     }
   </style>
@@ -40,28 +45,22 @@
     <h1>Мой портал</h1>
 
     <div class="modes">
-      <!-- Кнопка 1 -->
+      <!-- VPN -->
       <a class="mode-card" href="vpn.html">
         <span class="icon">🔑</span>
         <span class="label">VPN ключи</span>
       </a>
-      
-      <!-- Кнопка 2 (просто заголовок, никуда не ведет) -->
-      <div class="mode-card" style="cursor: default;">
-        <span class="icon">💾</span>
-        <span class="label">Диск</span>
-      </div>
 
-      <!-- Кнопка 3 -->
+      <!-- Диск Личное -->
       <a class="mode-card" href="personal.html">
         <span class="icon">👤</span>
-        <span class="label">Личное</span>
+        <span class="label">Диск (Личное)</span>
       </a>
 
-      <!-- Кнопка 4 -->
+      <!-- Диск Школа -->
       <a class="mode-card" href="school.html">
         <span class="icon">🏫</span>
-        <span class="label">Школа</span>
+        <span class="label">Диск (Школа)</span>
       </a>
     </div>
   </div>
